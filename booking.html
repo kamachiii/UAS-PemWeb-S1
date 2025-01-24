@@ -9,6 +9,19 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
 </head>
+<style>
+  input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+  input[type="number"]::-webkit-inner-spin-button, 
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>
 <body>
   <div id="navbar">
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -73,6 +86,83 @@
     </nav>    
   </div>
 <!-- Masukin Isi html dibawah sini-->
+  <div class="flex justify-center items-center min-h-screen bg-gray-100 py-5">
+    <div class="w-full max-w-4xl border border-gray-300 p-6 rounded-lg shadow-md bg-white">
+        <p class="text-right"><a href="home.html" class="text-blue-500 hover:underline">Home</a> > Booking</p>
+        <h1 class="text-2xl font-bold mb-4 text-center">Booking Service</h1>
+        <form id="bookingForm" class="space-y-6">
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label for="jenis_kendaraan" class="text-sm font-medium text-gray-700 text-right">Jenis Kendaraan</label>
+                <select id="jenis_kendaraan" name="jenis_kendaraan" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="minibus">Minibus</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="truck">Truck</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label for="nama_pemesan" class="text-sm font-medium text-gray-700 text-right">Nama Pemesan</label>
+                <input type="text" id="nama_pemesan" name="nama_pemesan" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label class="text-sm font-medium text-gray-700 text-right">Kategori Peminjam</label>
+                <div class="col-span-2 flex items-center space-x-4">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="kategori_peminjam" value="pribadi" class="text-blue-500 focus:ring-blue-500" required>
+                        <span class="ml-2 text-lg">Pribadi</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="kategori_peminjam" value="perusahaan" class="text-blue-500 focus:ring-blue-500">
+                        <span class="ml-2 text-lg">Perusahaan/Organisasi</span>
+                    </label>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-start">
+                <label for="deskripsi_kebutuhan" class="text-sm font-medium text-gray-700 text-right">Deskripsi Kebutuhan</label>
+                <textarea id="deskripsi_kebutuhan" name="deskripsi_kebutuhan" rows="6" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required></textarea>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label class="text-sm font-medium text-gray-700 text-right">Jam, Tanggal Service</label>
+                <div class="col-span-2 flex space-x-4">
+                    <input type="time" id="jam_service" name="jam_service" class="w-1/2 text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                    <input type="date" id="tanggal_service" name="tanggal_service" class="w-1/2 text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label for="request_montir" class="text-sm font-medium text-gray-700 text-right">Request Montir</label>
+                <input type="text" id="request_montir" name="request_montir" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label for="telepon" class="text-sm font-medium text-gray-700 text-right">Telepon/HP</label>
+                <input type="number" id="telepon" name="telepon" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <label for="email" class="text-sm font-medium text-gray-700 text-right">Email</label>
+                <input type="email" id="email" name="email" class="col-span-2 w-full text-lg py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+          
+            <!-- Submit dan tombol reset -->
+            <div class="grid grid-cols-3 gap-4">
+                <div></div>
+                <div class="col-span-2 flex space-x-4">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-3 text-lg rounded-md shadow-md hover:bg-blue-600 focus:ring focus:ring-blue-300">
+                        Submit
+                    </button>
+                    <button type="reset" class="bg-gray-300 text-black px-6 py-3 text-lg rounded-md shadow-md hover:bg-gray-400">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
 
+<script>
+  const form = document.getElementById('bookingForm');
+  form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Form berhasil disubmit!');
+      form.reset();
+  });
+</script>
 </body>
 </html>
