@@ -15,6 +15,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+
+<style>
+  .receipt {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  .receipt h4 {
+    margin-bottom: 5px;
+  }
+  .receipt p {
+    margin: 0;
+  }
+  .receipt ul {
+    padding-left: 20px;
+  }
+  .receipt hr {
+    border-top: 1px dashed #000;
+  }
+</style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -187,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               Minibus
                           </td>
                           <td>
-                              B4223SAP
+                              B4222SAP
                           </td>
                           <td>
                              Asep Ban Serep
@@ -199,7 +219,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               1 Jan 2023
                           </td>
                           <td class="project-actions text-right">
-                              <a class="btn btn-primary btn-sm" href="#">
+                              <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#modal-tambah-pelanggan">
                                   <i class="fas fa-eye">
                                   </i>
                                   View
@@ -237,75 +257,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </footer>
 </div>
 <!-- ./wrapper -->
-
-<!-- Modal Tambah Montir -->
-<div class="modal fade" id="modal-tambah-pelanggan">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<!-- Modal -->
+<div class="modal fade" id="modal-tambah-pelanggan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Tambah Pelanggan</h4>
+        <h5 class="modal-title" id="exampleModalLabel">Detail Transaksi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="#" method="post">
-        <div class="modal-body">
-
-          <div class="form-group">
-            <label for="nama-pelanggan">Nama Pelanggan</label>
-            <input type="text" class="form-control" id="nama-pelanggan" placeholder="Nama Pelanggan">
-          </div>
-          <div class="row">
-            <div class="form-group col-6">
-              <label for="jenis-kendaraan">Jenis Kendaraan</label>
-              <select class="form-control" id="jenis-kendaraan">
-                <option>Motor</option>
-                <option>Mobil</option>
-                <option>Minibus</option>
-                <option>Truk kecil</option>
-                <option>Truk</option>
-                <option>Bus</option>
-              </select>
-            </div>
-            <div class="form-group col-6">
-              <label for="nomor-polisi">Nomor Polisi</label>
-            <input type="text" class="form-control" id="nomor-polisi" placeholder="Nomor Polisi">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="deskripsi-keluhan">Deskripsi Keluhan</label>
-            <textarea class="form-control" rows="3" placeholder="Deskripsi Keluhan" id="deskripsi-keluhan"></textarea>
-          </div>
-          <div class="row mx-auto justify-content-center">
-            <div class="col-4 text-center">
-              <input type="radio" name="kemampuan" id="service-ringan">
-              <label for="service-ringan">Service Ringan</label>
-            </div>
-            <div class="col-4 text-center">
-              <input type="radio" name="kemampuan" id="service-berat">
-              <label for="service-berat">Service Berat</label>
-            </div>
-            <div class="col-4 text-center">
-              <input type="radio" name="kemampuan" id="body-repair">
-              <label for="body-repair">Body Repair</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 form-group">
-              <label for="nomor-telepon">Nomor Telepon</label>
-              <input type="text" class="form-control" id="nomor-telepon" placeholder="Nomor Telepon">
-            </div>
-            <div class="col-6 form-group">
-              <label for="waktu-pengambilan">Waktu Pengambilan</label>
-              <input type="date" class="form-control" id="waktu-pengambilan">
-            </div>
-          </div>
+      <div class="modal-body">
+        <div class="receipt">
+          <h4 class="text-center">Bengkel Putra Jaya</h4>
+          <p class="text-center">Jl. Kebon Jeruk No. 123, Jakarta</p>
+          <hr>
+          <p><strong>Pelanggan:</strong> Dika Ikat Sepatu</p>
+          <p><strong>Kategori:</strong> Minibus</p>
+          <p><strong>Nopol:</strong> B4222SAP</p>
+          <p><strong>Montir:</strong> Asep Ban Serep</p>
+          <hr>
+          <p><strong>Harga:</strong> Rp 2.000.000</p>
+          <p><strong>Yang Diganti:</strong></p>
+          <ul>
+            <li>Ban</li>
+            <li>Oli</li>
+            <li>Rem</li>
+          </ul>
+          <hr>
+          <p><strong>Tanggal Input:</strong> 1 Jan 2022</p>
+          <p><strong>Tanggal Pengambilan:</strong> 1 Jan 2023</p>
+          <hr>
+          <p class="text-center">Terima Kasih</p>
         </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Simpan data</button>
-        </div>
-      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>

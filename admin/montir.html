@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               1
                           </td>
                           <td>
-                              Ahmad Baenulhaki Jamaludin
+                              Zaki Tutup Botol
                           </td>
                           <td class="text-center">
                               <ul class="list-inline">
@@ -194,17 +194,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                              10 Tahun
                           </td>
                           <td class="project-actions text-right">
-                              <a class="btn btn-primary btn-sm" href="#">
+                              <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#modal-lihat-montir">
                                   <i class="fas fa-eye">
                                   </i>
                                   View
                               </a>
-                              <a class="btn btn-warning btn-sm" href="#">
+                              <a class="btn btn-warning btn-sm" href="#" data-toggle="modal" data-target="#modal-edit-montir">
                                   <i class="fas fa-pencil-alt">
                                   </i>
                                   Edit
                               </a>
-                              <a class="btn btn-danger btn-sm" href="#">
+                              <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#modal-hapus-montir">
                                   <i class="fas fa-trash">
                                   </i>
                                   Delete
@@ -326,6 +326,186 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <button type="submit" class="btn btn-primary">Simpan data</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Lihat Montir -->
+<div class="modal fade" id="modal-lihat-montir">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Lihat Montir</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="lihat-nama-montir">Nama Montir</label>
+          <input type="text" class="form-control" id="lihat-nama-montir" value="Zaki Tutup Botol" readonly>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="lihat-jenis-montir">Jenis Montir</label>
+            <input type="text" class="form-control" id="lihat-jenis-montir" value="Senior Montir" readonly>
+          </div>
+          <div class="form-group col-6">
+            <label for="lihat-pengalaman">Pengalaman</label>
+            <input type="text" class="form-control" id="lihat-pengalaman" value="10 Tahun" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lihat-deskripsi-skill">Deskripsi Skill</label>
+          <textarea class="form-control" rows="3" id="lihat-deskripsi-skill" readonly>Pernah bekerja di Suzuki selama 10 tahun
+Bisa memperbaiki segala jenis kendaraan
+          </textarea>
+        </div>
+        <div class="row mx-auto justify-content-center">
+          <div class="col-4 text-center">
+            <input type="checkbox" name="kemampuan" id="edit-service-ringan" checked disabled>
+            <label for="edit-service-ringan">Service Ringan</label>
+          </div>
+          <div class="col-4 text-center">
+            <input type="checkbox" name="kemampuan" id="edit-service-berat" checked disabled>
+            <label for="edit-service-berat">Service Berat</label>
+          </div>
+          <div class="col-4 text-center">
+            <input type="checkbox" name="kemampuan" id="edit-body-repair" checked disabled>
+            <label for="edit-body-repair">Body Repair</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lihat-tempat-lahir">Tempat Lahir, Tanggal Lahir</label>
+          <div class="row">
+            <div class="col-6">
+              <input type="text" class="form-control" id="lihat-tempat-lahir" value="Jakarta" readonly>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control" id="lihat-tanggal-lahir" value="03/14/1996" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 form-group">
+            <label for="lihat-nomor-telepon">Nomor Telepon</label>
+            <input type="text" class="form-control" id="lihat-nomor-telepon" value="012345678911" readonly>
+          </div>
+          <div class="col-6">
+            <label for="lihat-foto-montir" class="mb-2">Foto Montir</label>
+            <div class="text-center">
+              <img id="lihat-foto-montir" class="img-fluid" style="height: 100px;" src="dist/img/avatar.png" alt="Foto Montir">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Montir -->
+<div class="modal fade" id="modal-edit-montir">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Montir</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="#" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="edit-nama-montir">Nama Montir</label>
+            <input type="text" class="form-control" id="edit-nama-montir" placeholder="Nama Montir"  value="Zaki Tutup Botol">
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="edit-jenis-montir">Jenis Montir</label>
+              <select class="form-control" id="edit-jenis-montir">
+                <option selected>Senior Montir</option>
+                <option>Junior Montir</option>
+                <option>Magang</option>
+              </select>
+            </div>
+            <div class="form-group col-6">
+              <label for="edit-pengalaman">Pengalaman</label>
+              <input type="text" class="form-control" id="edit-pengalaman" placeholder="Pengalaman" value="10 Tahun">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-deskripsi-skill">Deskripsi Skill</label>
+            <textarea class="form-control" rows="3" placeholder="Deskripsi Skill" id="edit-deskripsi-skill">Pernah bekerja di Suzuki selama 10 tahun
+Bisa memperbaiki segala jenis kendaraan</textarea>
+          </div>
+          <div class="row mx-auto justify-content-center">
+            <div class="col-4 text-center">
+              <input type="checkbox" name="kemampuan" id="edit-service-ringan" checked>
+              <label for="edit-service-ringan">Service Ringan</label>
+            </div>
+            <div class="col-4 text-center">
+              <input type="checkbox" name="kemampuan" id="edit-service-berat" checked>
+              <label for="edit-service-berat">Service Berat</label>
+            </div>
+            <div class="col-4 text-center">
+              <input type="checkbox" name="kemampuan" id="edit-body-repair" checked>
+              <label for="edit-body-repair">Body Repair</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-tempat-lahir">Tempat Lahir, Tanggal Lahir</label>
+            <div class="row">
+              <div class="col-6">
+                <input type="text" class="form-control" id="edit-tempat-lahir" placeholder="Tempat Lahir" value="Jakarta">
+              </div>
+              <div class="col-6">
+                <input type="date" class="form-control" id="edit-tanggal-lahir" value="03/14/1996">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="edit-nomor-telepon">Nomor Telepon</label>
+              <input type="text" class="form-control" id="edit-nomor-telepon" placeholder="Nomor Telepon" value="012345678911">
+            </div>
+            <div class="col-6">
+              <label for="edit-foto-montir" class="mb-2">Foto Montir</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="edit-foto-montir">
+                <label for="edit-foto-montir" class="custom-file-label">Foto Montir</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Simpan perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Hapus Montir -->
+<div class="modal fade" id="modal-hapus-montir">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Hapus Montir</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Apakah Anda yakin ingin menghapus montir ini?</p>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Hapus</button>
+      </div>
     </div>
   </div>
 </div>

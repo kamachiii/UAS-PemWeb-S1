@@ -187,7 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               1 Jan 2022
                           </td>
                           <td>
-                              Dika Rudi
+                              Dimas Gagang Panci
                           </td>
                           <td>
                               B4223SAP
@@ -202,17 +202,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               Service Ringan
                           </td>
                           <td class="project-actions text-right">
-                              <a class="btn btn-primary btn-sm" href="#">
+                              <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#modal-lihat-peminjam">
                                   <i class="fas fa-eye">
                                   </i>
                                   View
                               </a>
-                              <a class="btn btn-warning btn-sm" href="#">
+                              <a class="btn btn-warning btn-sm" href="#" data-toggle="modal" data-target="#modal-edit-peminjam">
                                   <i class="fas fa-pencil-alt">
                                   </i>
                                   Edit
                               </a>
-                              <a class="btn btn-danger btn-sm" href="#">
+                              <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#modal-hapus-peminjam">
                                   <i class="fas fa-trash">
                                   </i>
                                   Delete
@@ -323,6 +323,159 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <button type="submit" class="btn btn-primary">Simpan data</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Lihat Peminjam -->
+<div class="modal fade" id="modal-lihat-peminjam">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Lihat Peminjam</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="lihat-nama-pelanggan">Nama Pelanggan</label>
+          <input type="text" class="form-control" id="lihat-nama-pelanggan" value="Dimas Gagang Panci" readonly>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="lihat-jenis-kendaraan">Jenis Kendaraan</label>
+            <input type="text" class="form-control" id="lihat-jenis-kendaraan" value="Minibus" readonly>
+          </div>
+          <div class="form-group col-6">
+            <label for="lihat-nomor-polisi">Nomor Polisi</label>
+            <input type="text" class="form-control" id="lihat-nomor-polisi" value="B4223SAP" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lihat-deskripsi-keluhan">Deskripsi Keluhan</label>
+          <textarea class="form-control" rows="3" id="lihat-deskripsi-keluhan" readonly>Mesin mati</textarea>
+        </div>
+        <div class="row mx-auto justify-content-center">
+          <div class="col-4 text-center">
+            <input type="radio" name="edit-layanan" id="edit-service-ringan" checked disabled>
+            <label for="edit-service-ringan">Service Ringan</label>
+          </div>
+          <div class="col-4 text-center">
+            <input type="radio" name="edit-layanan" id="edit-service-berat" disabled>
+            <label for="edit-service-berat">Service Berat</label>
+          </div>
+          <div class="col-4 text-center">
+            <input type="radio" name="edit-layanan" id="edit-body-repair" disabled>
+            <label for="edit-body-repair">Body Repair</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 form-group">
+            <label for="lihat-nomor-telepon">Nomor Telepon</label>
+            <input type="text" class="form-control" id="lihat-nomor-telepon" value="01122334455" readonly>
+          </div>
+          <div class="col-6 form-group">
+            <label for="lihat-waktu-pengambilan">Waktu Pengambilan</label>
+            <input type="text" class="form-control" id="lihat-waktu-pengambilan" value="12/03/2022" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Peminjam -->
+<div class="modal fade" id="modal-edit-peminjam">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Peminjam</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="#" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="edit-nama-pelanggan">Nama Pelanggan</label>
+            <input type="text" class="form-control" id="edit-nama-pelanggan" value="Dimas Gagang Panci">
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="edit-jenis-kendaraan">Jenis Kendaraan</label>
+              <select class="form-control" id="edit-jenis-kendaraan">
+                <option>Motor</option>
+                <option>Mobil</option>
+                <option selected>Minibus</option>
+                <option>Truk kecil</option>
+                <option>Truk</option>
+                <option>Bus</option>
+              </select>
+            </div>
+            <div class="form-group col-6">
+              <label for="edit-nomor-polisi">Nomor Polisi</label>
+              <input type="text" class="form-control" id="edit-nomor-polisi" value="B4223SAP">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-deskripsi-keluhan">Deskripsi Keluhan</label>
+            <textarea class="form-control" rows="3" id="edit-deskripsi-keluhan">Mesin mati</textarea>
+          </div>
+          <div class="row mx-auto justify-content-center">
+            <div class="col-4 text-center">
+              <input type="radio" name="edit-layanan" id="edit-service-ringan" checked>
+              <label for="edit-service-ringan">Service Ringan</label>
+            </div>
+            <div class="col-4 text-center">
+              <input type="radio" name="edit-layanan" id="edit-service-berat">
+              <label for="edit-service-berat">Service Berat</label>
+            </div>
+            <div class="col-4 text-center">
+              <input type="radio" name="edit-layanan" id="edit-body-repair">
+              <label for="edit-body-repair">Body Repair</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="edit-nomor-telepon">Nomor Telepon</label>
+              <input type="text" class="form-control" id="edit-nomor-telepon" value="01122334455">
+            </div>
+            <div class="col-6 form-group">
+              <label for="edit-waktu-pengambilan">Waktu Pengambilan</label>
+              <input type="date" class="form-control" id="edit-waktu-pengambilan" value="12/03/2022">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Simpan perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Hapus Peminjam -->
+<div class="modal fade" id="modal-hapus-peminjam">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Hapus Peminjam</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Apakah Anda yakin ingin menghapus peminjam ini?</p>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Hapus</button>
+      </div>
     </div>
   </div>
 </div>

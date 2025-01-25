@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="index.html" method="post">
+        <form action="#" method="post" onsubmit="handleLogin(event)">
           <div class="input-group mb-3">
             <input type="email" class="form-control" placeholder="Email" required>
             <div class="input-group-append">
@@ -89,5 +89,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script>
+  function handleLogin(event) {
+    event.preventDefault(); // Mencegah pengiriman form ke server
+    // Simulate login success by redirecting to the dashboard page
+    window.location.href = "index.html";
+  }
+</script>
 </body>
 </html>
